@@ -1,0 +1,35 @@
+<mat-card>    
+  <mat-card-header>Booking Entries</mat-card-header>
+<p></p>
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="entries">
+  
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="editEntry(element.id)"> {{element.id}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Guest Name </mat-header-cell>        
+        <mat-cell *matCellDef="let element" (click)="editEntry(element.id)"> {{element.name}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="comment">
+        <mat-header-cell *matHeaderCellDef> Comment </mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="editEntry(element.id)"> {{element.comment}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="lastUpdate">
+        <mat-header-cell *matHeaderCellDef> Last Updated </mat-header-cell>
+        <mat-cell *matCellDef="let element" (click)="editEntry(element.id)"> {{element.lastUpdated}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    
+      <mat-row *matRowDef="let row; columns: displayedColumns;" ></mat-row>
+    </mat-table>
+  </div>
+
+  <p></p>
+  <button mat-fab color="primary" [routerLink]="['/entry-add']">Add</button>
+</mat-card>

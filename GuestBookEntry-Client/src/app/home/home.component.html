@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-content>
+    <button mat-raised-button color="accent" *ngIf="!oktaAuth.isAuthenticated()"
+            (click)="oktaAuth.loginRedirect()">Login
+    </button>    
+    <button mat-raised-button color="accent" *ngIf="oktaAuth.isAuthenticated()"
+            [routerLink]="['/entry-list']">All Entries
+    </button>
+           
+    <button mat-raised-button color="accent" *ngIf="oktaAuth.isAuthenticated()"
+            [routerLink]="['/entry-search']">Search Entry
+            
+    </button>
+  </mat-card-content>
+</mat-card>
