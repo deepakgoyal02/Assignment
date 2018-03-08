@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 import com.blk.boot.repository.GuestBookRepository;
 
 @Service
-public class GuestBookServiceSupportTest {
+public class GuestBookServiceSupportTest {// TODO: need to write positive test cases , some strange problem 
+	// with mockito lib and committed due to time limit .
 
 	@InjectMocks
 	private GuestBookServiceSupport onTest;
