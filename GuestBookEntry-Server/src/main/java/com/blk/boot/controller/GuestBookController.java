@@ -29,8 +29,7 @@ public class GuestBookController {
 	public GuestBookEntry addGuest(@RequestBody GuestBookEntry entry) {
 		Validate.notNull(entry, "Entry to be added can not be null");
 		entry.setClientId(getClientId());
-		GuestBookEntry asd = service.create(entry);
-		return asd;
+		return service.create(entry);		
 	}
 
 	@PutMapping("/entry-update")
